@@ -36,7 +36,8 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" v-link="{ path: '/list' }">vue-seeds</a>
+	      <a class="navbar-brand" v-link="{ path: '/list' }">vue-seeds + {{fatherName.name}}</a>
+			<input type="text" v-model="fatherName.name">
 	    </div>
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -147,11 +148,13 @@
             isLogin: {
                 type: String,
                 default: localStorage.login
-            }
+            },
+			fatherName:'',
+			headVali: ''
         },
 
 		created() {
-
+			console.log('child - father = ')
 		}
 
 	};

@@ -28,11 +28,14 @@
 		methods: {
 			showFooter: function(){
 				this.footer.show = true;
+				this.$dispatch('footer','my is footer')
 			},
 			hideFooter: function() {
 				this.footer.show = false;
 			}
-		}
+		},
+
+
 	};
 
 

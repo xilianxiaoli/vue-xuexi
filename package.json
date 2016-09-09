@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --quiet",
+    "dev": "webpack-dev-server --port 8011 --inline --hot --quiet",
     "build": "export NODE_ENV=production && webpack --progress --hide-modules"
   },
   "private": true,
