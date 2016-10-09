@@ -2,6 +2,7 @@ var vue = require('vue');
 var vueRouter = require('vue-router');
 var configRouter = require('./routes.js');
 var filter = require('./filters/index.js');
+var directive = require('./directive/index.js');
 var vueStrap = require('../node_modules/vue-strap/dist/vue-strap.min.js');
 var config = require('./config.js');
 var services = require('./services/index.js');
@@ -34,6 +35,7 @@ var appEntry = require('./app.vue');
 
 //初始化过滤器
 filter.init(vue);
+directive.init(vue);
 
 var entry = document.getElementById('main');
 var selector = config.entry.split('');
@@ -61,6 +63,9 @@ for(var key in vueStrap){
 //初始化应用程序路由
 vue.use(vueRouter);
 
+vue.partial('partialId','<span>part : </span>');
+
+
 var router = new vueRouter({});
 configRouter(router);
 
@@ -87,11 +92,10 @@ new vue({
 window.Vue = vue;
 
 //每次路由之前请求该方法
-router.beforeEach(function () {
-	console.log('before each');
-
+router.beforeEach(function (data) {
 	var prevPath = router._currentRoute.path;
-
+	console.log('before each:'+prevPath);
+	console.log('auth:'+data.to.auth);
 });
 
 router.afterEach(function() {

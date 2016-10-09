@@ -6,7 +6,7 @@
 
 	<section>
 	    <div class="page">
-    	    <router-view transition="expand"></router-view>
+    	    <router-view transition="expand"></router-view>  <!--顶级的外链。它会渲染一个和顶级路由匹配的组件-->
     	</div>
 	</section>
 

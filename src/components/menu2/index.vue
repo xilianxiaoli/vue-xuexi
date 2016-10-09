@@ -3,6 +3,11 @@
     <div style="">
         <div class="row a-bounceinT" style="text-align:center;padding:100px;">
             <p>welcome to vue seeds menu2</p>
+            <p>path: {{$route.path}}</p>
+            <div>
+                <p>当前路径: {{$route.path}}</p>
+                <p>当前路由参数: {{$route.params | json}}</p>
+            </div>
             <span v-on:click="makeArr">{{name | capitalize }}</span>
             <p v-if='1==1' v-bind:class='classObj' @click="change()">v-if</p>
             showCount = {{showCount}}
@@ -14,6 +19,11 @@
                 {{item.name}}
             </li>
         </ul>
+
+        <button @click='goto()'>切换路由</button>
+
+        <!--<a>-->
+
     </div>
 
 </template>
@@ -53,9 +63,14 @@
                     this.list.push(_item)
                 }
                 this.$dispatch('child-msg', 'child')
+                console.log('activate path: '+$route.path)
+
             },
             change:function() {
                 this.show = !this.show;
+            },
+            goto:function (){
+                router.go({name:'comm'})
             }
         },
         components:{
@@ -63,7 +78,7 @@
             comm
         },
         activate:function(done) {
-            console.log('activate')
+            console.log('activate path: ')
         }
     }
 
