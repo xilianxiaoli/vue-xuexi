@@ -22,6 +22,8 @@
 
         <button @click='goto()'>切换路由</button>
 
+        <a v-link="'comm'">comm</a>
+
         <!--<a>-->
 
     </div>

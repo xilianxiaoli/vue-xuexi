@@ -92,10 +92,11 @@ new vue({
 window.Vue = vue;
 
 //每次路由之前请求该方法
-router.beforeEach(function (data) {
+router.beforeEach(function (transition) {
 	var prevPath = router._currentRoute.path;
 	console.log('before each:'+prevPath);
-	console.log('auth:'+data.to.auth);
+	console.log('auth:'+transition.to.auth);
+	transition.next()
 });
 
 router.afterEach(function() {
