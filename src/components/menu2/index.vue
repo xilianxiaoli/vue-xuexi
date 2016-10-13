@@ -18,9 +18,9 @@
             </li>
         </ul>
 
-        <span>动态组件</span>
-        <input type="text" v-model="currentView">
-        <component :is="currentView"></component>
+        <!--<span>动态组件</span>-->
+        <!--<input type="text" v-model="currentView">-->
+        <!--<component :is="currentView"></component>-->
 
 
         <button @click='goto()'>点击事件切换路由</button>
