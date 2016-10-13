@@ -7,15 +7,15 @@ module.exports = {
         this.vue = v;
         this.vue.directive('myDirective',{
             bind: function () {
-                console.log('demo bound!')
+                console.log('myDirective bind')
             },
             update: function (value) {
                 this.el.innerHTML =
-                    'name - '       + this.name + '<br>' +
-                    'expression - ' + this.expression + '<br>' +
-                    'argument - '   + this.arg + '<br>' +
-                    'modifiers - '  + JSON.stringify(this.modifiers) + '<br>' +
-                    'value - '      + value
+                    'directive name - '       + this.name + '<br>' +
+                    'directive expression - ' + this.expression + '<br>' +
+                    'directive argument - '   + this.arg + '<br>' +
+                    'directive modifiers - '  + JSON.stringify(this.modifiers) + '<br>' +
+                    'directive value - '      + value
             }
         })
     }

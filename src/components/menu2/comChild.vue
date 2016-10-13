@@ -1,18 +1,15 @@
+<style>
+    
+</style>
 <template>
     <div>
-        <div>this is com component</div>
-
-        <com-child></com-child>
-
+        <div>this is comm child </div>
     </div>
 </template>
-<style>
-
-</style>
 <script>
-
+    import HeaderComponent from './components/header.vue'
     export default{
-        data:function() {
+        data(){
             return{
                 msg:'hello vue'
             }

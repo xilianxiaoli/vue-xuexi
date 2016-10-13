@@ -10,45 +10,11 @@
 		  <p id="danger-tips"></p>
 	</div>
 
-    <!--<div class="notification-center {{boncein}}">-->
-    	<!--<ul>-->
-    		<!--<li v-for="noti in notificationsList">-->
-    			<!--<div @click="pathToProfile(noti.operator._id)" class="avatar" style="background-image: url({{noti.targetUser.photo}});"></div>-->
-    			<!--<div class="body">-->
-    				<!--<span><a @click="pathToProfile(noti.operator._id)">{{noti.operator.username}}</a> {{noti.did | notificationActionFilter}}了您的分享 </span>-->
-    				<!--<span class="time">{{noti.createdAt}}</span>-->
-    			<!--</div>-->
-    			<!--<div @click="pathToCG(noti.targetTheme._id)" class="noti-item" style="background-image: url({{noti.targetTheme.image}});"></div>-->
-    		<!--</li>-->
-    		<!--<li>-->
-    			<!--<div @click="pathToNotifications()" class="body more"><a>查看更多</a></div>-->
-    		<!--</li>-->
-    	<!--</ul>-->
-    <!--</div>-->
-
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
-	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand" v-link="{ path: '/list' }">vue-seeds + {{fatherName.name}}</a>
-			<input type="text" v-model="fatherName.name">
+	      <a class="navbar-brand" >vue-seed</a>
 	    </div>
-
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav navbar-right" id="profile-menu">
-<!-- 	        <li><a>投稿</a></li>
-	        <li><a>个人中心</a></li>
-	       	<li><a>登录</a></li>
-	       	<li><a>注册</a></li>
-	       	<li><a>退出</a></li>
- -->	      </ul>
-	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
 
@@ -81,26 +47,19 @@
 				menu: {
 					currentName: 'index'
 				},
-
 				username: localStorage.username,
 				introduction: localStorage.introduction,
 				photo: 'background-image: url(' + localStorage.photo + ');',
 				photoSrc: localStorage.photo,
-
 				editable: false,
-
 				draftsCount: localStorage.draftsCount,
 				favouritesCount: localStorage.favouritesCount,
 				deletedCount: localStorage.deletedCount,
-
 				followerCount: localStorage.followerCount,
 				followingCount: localStorage.followingCount,
-
 				notificationCount: 0,
 				realNofiticationCount: 0,
-
 				boncein: '',
-
 				notificationsList: []
 			};
 		},
@@ -115,31 +74,6 @@
 				util.cancelActiveMenu();
 				this.menu.currentName = path;
 				router.replace(path);
-			},
-
-			pathToAndCloseThis: function(path) {
-				this.pathTo(path);
-				this.showRight = false;
-			},
-
-			hideThisDangerAlert: function() {
-				var alertDanger = document.getElementById('alert-danger');
-				var cls = alertDanger.getAttribute('class');
-				var cls = cls.split(' ');
-				var i = cls.indexOf('fade-enter');
-				cls.splice(i, 1);
-				cls.push('fade-leave');
-				alertDanger.setAttribute('class', cls.join(' '));
-			},
-
-			hideThisSuccessAlert: function() {
-				var alertSuccess = document.getElementById('alert-success');
-				var cls = alertSuccess.getAttribute('class');
-				var cls = cls.split(' ');
-				var i = cls.indexOf('fade-enter');
-				cls.splice(i, 1);
-				cls.push('fade-leave');
-				alertSuccess.setAttribute('class', cls.join(' '));
 			}
 
 		},

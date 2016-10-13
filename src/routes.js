@@ -15,14 +15,19 @@ module.exports = function(router) {
             name: 'time',
             component: require('./components/menu2/index.vue')
         },
+        '/comm': {
+            name: 'comm',
+            component: require('./components/menu2/comm.vue')
+        },
+        '/com': {
+            name: 'com',
+            component: require('./components/menu2/com.vue')
+        },
         '/404': {
             component: {
                 component: require('./404.vue')
             }
-        },
-        '/comm': {
-            name: 'comm',
-            component: require('./components/menu2/comm.vue')
         }
+
     })
 };

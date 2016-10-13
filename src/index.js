@@ -14,11 +14,6 @@ if(document.domain === 'localhost') {
 	window.debug = false;
 }
 
-//初始化用户登录状态
-// localStorage.login = typeof localStorage.login == 'undefined' ? 'false' : localStorage.login;
-// localStorage.userData = typeof localStorage.userData == 'undefined' ? '' : localStorage.userData;
-// localStorage.accessToken = typeof localStorage.accessToken == 'undefined' ? '' : localStorage.accessToken;
-
 //初始化XMLHttpRequest RestfulAPI
 vue.use(require('vue-resource'));
 vue.http.options.root = 'http://api.poimoe.com/';
@@ -81,13 +76,7 @@ new vue({
 
 	data: {
 		title: config.title
-	},
-
-	ready: function() {
-		var store = services.init(this);
-	 	window.services = store;
-	}
-});
+	}});
 
 window.Vue = vue;
 
@@ -107,3 +96,5 @@ router.afterEach(function() {
 router.redirect({
   '*': '/index'
 });
+
+vue.config.devtools = true
