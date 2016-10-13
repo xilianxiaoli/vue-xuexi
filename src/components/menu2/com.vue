@@ -11,11 +11,29 @@
 </style>
 <script>
 
-    export default{
+    var comChild =  require ('./comChild.vue')
+
+    module.exports = function() {
         data:function() {
             return{
                 msg:'hello vue'
             }
+        },
+
+        components:{
+            comChild
         }
     }
+
+//    export default{
+//        data:function() {
+//            return{
+//                msg:'hello vue'
+//            }
+//        },
+//
+//        components:{
+//            comChild
+//        }
+//    }
 </script>
