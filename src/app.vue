@@ -13,11 +13,6 @@
 	<footer>
 	    <poi-footer v-on:footer="onFooter" v-show="footShow"></poi-footer> <!--或者通过 v-on 标签绑定派发监听事件-->
 	</footer>
-	<!--
-	关于子组件调用父组件的方法，只能通过向上广播的方式调用，
-	在父组件中监听的方式有两种  1. 标签上 v-on:footer="onFooter" ， 监听footer句柄，触发onFooter方法
-	2. events 中监听
-	-->
 
 </template>
 
@@ -31,7 +26,7 @@
 		data() {
 			return {
 				footShow:true,
-				haha: 'fuck',
+				haha: '',
 				hahaObj:{
 					name:'fuckObj'
 				}
@@ -61,6 +56,17 @@
 </script>
 
 <style>
+
+	.expand-transition {
+		transition: all .3s ease;
+		overflow: hidden;
+	}
+
+	.expand-enter, .expand-leave {
+		height: 0;
+		/*padding: 0px 10px;*/
+		opacity: 0;
+	}
 	
 	p {
 		font-size: 2em;

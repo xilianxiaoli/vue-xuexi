@@ -5,36 +5,48 @@
         <span>父组件name:{{name}}</span>
 
         <div>
-            <span class="bb" v-for='ms in messages'></span>
+            <span class="bb" v-for='ms in messages' track-by="$index">{{ms}}</span>
         </div>
 
-        <com-child :f_name.sync='name'></com-child>
+        <button @click="getFromChild()">dd</button>
+
+        <com-child :f_name.sync='name' v-on:child="getFromChild" v-ref:comChild></com-child>
 
     </div>
 </template>
 
 <script>
 
-    var comChild =  require ('./comChild.vue');
+    var comChild = require('./comChild.vue');
 
-    var ff =  {
-        data:function() {
-            return{
-                msg:'com vue',
-                name:'com',
-                messages:[]
+    var ff = {
+        data: function() {
+            return {
+                msg: 'com vue',
+                name: 'com',
+                messages: []
             }
         },
 
-        components:{
+        components: {
             comChild
+        },
+        methods:{
+            getFromChild:function(msg) {
+                this.messages.push(msg);
+            }
         },
         // 在创建实例时 `events` 选项简单地调用 `$on`
         events: {
-            'com-child': function (msg) {
-                // 事件回调内的 `this` 自动绑定到注册它的实例上
-                this.messages.push(msg)
+            'child': function(msg) {
+                this.messages.push(msg);
+                return true
             }
+        },
+        ready:function() {
+            var c = this.$refs.comchild
+            c.wall()
+            console.log(c)
         }
     }
 
@@ -42,8 +54,8 @@
 </script>
 
 <style>
-.bb{
-    display: block;
-    color: #00b3ee;
-}
+    .bb {
+        display: block;
+        color: #00b3ee;
+    }
 </style>

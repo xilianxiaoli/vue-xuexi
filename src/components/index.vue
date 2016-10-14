@@ -1,10 +1,14 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
     
     <div style="">
         <div class="row a-bounceinT" style="text-align:center;">
-            <p>welcome to vue seeds</p>
+            <p>welcome to vue</p>
             <!--<router-view transition="expand"></router-view>  &lt;!&ndash;顶级的外链。它会渲染一个和顶级路由匹配的组件&ndash;&gt;-->
         </div>
+        <code>
+            1.响应的数据绑定<br>
+            1.组合的视图组件<br>
+        </code>
         <list></list>
     </div>
 

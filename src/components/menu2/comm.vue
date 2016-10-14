@@ -16,8 +16,6 @@
         {{key}}:{{val}}
         </span>
 
-        {{msg}}
-
         <partial v-bind:name="partialId"></partial>
 
     </div>

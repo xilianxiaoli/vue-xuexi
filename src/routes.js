@@ -10,17 +10,16 @@ module.exports = function(router) {
                 }
             }
         },
-
         '/timeline': {
             name: 'time',
             component: require('./components/menu2/index.vue')
         },
         '/comm': {
-            name: 'comm',
+            name: '',
             component: require('./components/menu2/comm.vue')
         },
         '/com': {
-            name: 'com',
+            name: '',
             component: require('./components/menu2/com.vue')
         },
         '/404': {

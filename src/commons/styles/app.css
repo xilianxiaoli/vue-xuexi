@@ -168,16 +168,7 @@ button.navbar-toggle.collapsed {
 	margin-left: 0px;
 }
 
-.expand-transition {
-  	transition: all .3s ease;
-  	overflow: hidden;
-}
 
-.expand-enter, .expand-leave {
-  	height: 0;
-  	/*padding: 0px 10px;*/
-  	opacity: 0;
-}
 
 .carousel-control.right {
 	background-image: none;
